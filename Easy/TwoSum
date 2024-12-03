@@ -1,1 +1,40 @@
+import java.util.HashMap;
 
+class Solution 
+{
+    public int[] twoSum(int[] nums, int target) 
+    {
+        //I like to declare variables first and we only need 2 spaces for 2 index
+
+        int[] result = new int[2];
+        int num1;
+
+        //create a hashmap to store our index's we've already iterated over
+        HashMap<Integer, Integer> record = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) 
+        {
+            num1 = target - nums[i];
+
+            //if our hash map has num1 meaning it belongs to nums array previous iteration then set num1 equal to the value at key num1 which is the index of it
+            if (record.containsKey(num1)) 
+            {
+                num1 = record.get(num1);
+                
+                //set result to our index's we found then return it
+                result[0] = num1;
+                result[1] = i;
+
+                return result;
+            } 
+
+            //if there was no value found for 2 sum in this iteration then add the array value as the hash key and array value as hash index
+            else 
+            {
+                record.put(nums[i], i);
+            }
+        }
+        //if there 2 sum solution in the arrray return null
+        return null;
+    }
+}
