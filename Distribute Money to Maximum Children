@@ -7,7 +7,7 @@ class Solution {
         if (money >= children)
         {   
             distributeFunds = money - children;
-            childrenWith8 = distributeFunds / 7;
+            childrenWith8 = distributeFunds / 7;dedasd
             remainder = distributeFunds %7;
             if (childrenWith8 > children)
             {
